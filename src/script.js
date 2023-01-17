@@ -8,6 +8,11 @@ const gifImg = document.querySelector("img");
 const saveBtn = document.querySelector(".pasti");
 const wrapperBtn = document.querySelector(".chossing-wrapper");
 const mybg = document.querySelector(".my-bg");
+const animatePro = document.querySelector(".my-info");
+
+function clicked() {
+    animatePro.classList.toggle('animate');
+}
 
 // Waktu TUnggu Berlangsung
 let setTime;
