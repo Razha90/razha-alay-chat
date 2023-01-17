@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(localStorage.hasOwnProperty("save")) {
       let myLocal = JSON.parse(localStorage.getItem('save'));
         myDataBase.push(myLocal);
-        chatPosition(parseInt(myDataBase[0]))
+        chatPosition(parseInt(myDataBase[0][0]))
         console.log(myDataBase);
      setTimeout(() => { box.classList.toggle("scaling")},3000);
     } else {
@@ -108,7 +108,7 @@ function restart() {
 
 // Go to Link
 function goLink() {
-    window.location.replace(myDataBase[1]);
+    window.location.replace(myDataBase[0][1]);
 }
 
 // Save Data
@@ -194,7 +194,7 @@ function chatPosition(n) {
             break;
         case 5:
             textOneButton("I Love U ❤😜", "hihihi", "saveD(16)", "./img/peluk.gif",700);
-            setMessage = "Si Paling Di Cintai💏";
+            setMessage = "Si%20Paling%20Di%20Cintai💏";
             remBar();
             myDataBase.push(16);
             myDataBase.push(GenerateLink());
