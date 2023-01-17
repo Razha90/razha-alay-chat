@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+:root {
+    --ungu-terong: #1b132b;
+    --pink: #cf9ac6;
+    --hijau: #7ed957;
+    --merah: #ff5757;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Secular One', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.my-bg {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url("./bg-deks.jpg");
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: all .75s ease-in;
+}
+
+.blur {
+    filter: blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter:blur(4px);
+}
+
+.box-wrapper {
+    transform: scale(0);
+}
+
+.msg-box {
+    background-color: var(--ungu-terong);
+    border-radius: 10px;
+    color: var(--pink);
+    max-width: 320px;
+    min-width: 120px;
+    max-height: 200px;
+    min-height: 50px;
+    padding: 20px 20px 35px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    text-align: center;
+}
+
+.msg {
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+/** Button Chosing **/
+.chossing-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    position: relative;
+    top: -20px;
+}
+
+.chossing-wrapper div {
+    padding: 10px 20px;
+    min-width: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+b {
+    color: #cf9ac6;
+}
+
+
+.yes {
+    background-color: var(--hijau);
+    transition: all .3s ease-in;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.yes:hover, .pasti:hover {
+    box-shadow: 0px 0px 50px -6px var(--hijau);
+-webkit-box-shadow: 0px 0px 50px -6px var(--hijau);
+-moz-box-shadow: 0px 0px 50px -6px var(--hijau);
+transform: scale(0.8);
+}
+
+.no {
+    background-color: var(--merah);
+    transition: all .3s ease-in;
+    cursor: pointer;
+}
+
+.no:hover {
+    box-shadow: 0px 0px 50px -6px var(--merah);
+    -webkit-box-shadow: 0px 0px 50px -6px var(--merah);
+    -moz-box-shadow: 0px 0px 50px -6px var(--merah);
+    transform: scale(0.8);   
+}
+
+/**  Progress Bar  **/
+.progres-bar {
+    background-color: #100b1a;
+    width: 100%;
+    border-radius: 5px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+.bar {
+    background-color: aqua;
+    width: 98%;
+    border-radius: 5px;
+    height: 8px;
+}
+
+/**Anaimated**/
+@keyframes animate1 {
+    from {
+        width: 98%;
+    }
+
+    to {
+        width:0%;
+    }
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    95%{transform: scale(1);}
+}
+
+.show {
+    opacity: 1;
+}
+@keyframes noScale {
+    from {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    
+    to{transform: scale(0); opacity: 0;}
+}
+
+.scaling {
+    animation: scaling .7s;
+    transform: scale(1);
+}
+
+.scaler {
+    animation: noScale .7s;
+}
+
+.baring {
+    opacity: 1;
+}
+
+.baring .bar {
+    animation: animate1 5s ease-in-out;
+    animation-delay: .5s;
+}
+
+.invisible {
+    visibility: hidden;
+}
